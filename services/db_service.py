@@ -9,6 +9,7 @@ class DatabaseService:
         self.create_schema()
         self._check_schema_exists()
 
+    # Adatbázis kapcsolat létrehozása
     def connect(self):
         try:
             self.conn = psycopg2.connect(**DATABASE_CONFIG)
@@ -18,6 +19,7 @@ class DatabaseService:
             print(f"Kapcsolódási hiba: {e}")
             raise
 
+    # hr SCHEMA ellenőrzése
     def _check_schema_exists(self):
         query = """
         SELECT EXISTS(
@@ -29,6 +31,7 @@ class DatabaseService:
         if not result[0]:
             raise RuntimeError("A 'hr' séma nem létezik az adatbázisban!")
 
+    # Ha nem létezik a hr SCHEMA akkor létrehozzuk
     def create_schema(self):
         query = "CREATE SCHEMA IF NOT EXISTS hr;"
         self.execute_query(query)

@@ -4,6 +4,8 @@ class Job(BaseModel):
     TABLE_NAME = "hr.jobs"
     ID_COLUMN = "job_id"
     LOOKUP_COLUMN = "job_title"
+
+    # Tábla létrehozása ha az még nem létezik
     CREATE_TABLE_QUERY = f"""
         CREATE TABLE IF NOT EXISTS {TABLE_NAME} (
             {ID_COLUMN} SERIAL PRIMARY KEY,
@@ -11,6 +13,7 @@ class Job(BaseModel):
         );
     """
 
+    # Az új munkakörök beszúrása
     INSERT_QUERY = f"""
         INSERT INTO {TABLE_NAME} ({LOOKUP_COLUMN})
         VALUES (%s)

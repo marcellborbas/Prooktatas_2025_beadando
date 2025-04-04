@@ -1,5 +1,6 @@
 class BaseModel:
 
+    #Létre hozza az adott modelt , táblát az adatbázisban
     @classmethod
     def create_table(cls, db_service):
         try:
@@ -9,6 +10,7 @@ class BaseModel:
             print(f"Hiba a {cls.TABLE_NAME} tábla létrehozásakor: {e}")
             raise
 
+    # Új rekordok beszúrása az adott táblába
     @classmethod
     def insert_data(cls, db_service, values):
         try:
@@ -20,6 +22,7 @@ class BaseModel:
             print(f" Hiba adat beszúrásakor ({cls.TABLE_NAME}): {e}")
             raise
 
+    # Lekérdezi a létező rekordok id-ját az adott táblából
     @classmethod
     def _get_existing_id(cls, db_service, values):
         query = f"""

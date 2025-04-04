@@ -4,6 +4,7 @@ class Employee(BaseModel):
     TABLE_NAME = "hr.employees"
     ID_COLUMN = "employee_id"
 
+    # Tábla létrehozása ha az még nem létezik
     CREATE_TABLE_QUERY = f"""
         CREATE TABLE IF NOT EXISTS {TABLE_NAME} (
             {ID_COLUMN} SERIAL PRIMARY KEY,
@@ -20,6 +21,7 @@ class Employee(BaseModel):
         );
     """
 
+    # Az új alkalmazottak adatai beszúrása
     INSERT_QUERY = f"""
         INSERT INTO {TABLE_NAME} (first_name, last_name, department_id, job_id, location_id, hire_date, salary_id, absence_days)
         VALUES (%s, %s, %s, %s, %s, %s, %s, %s)

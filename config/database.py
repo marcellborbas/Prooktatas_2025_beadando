@@ -1,3 +1,4 @@
+# Az adatbázis kapcsolati konfiguráció
 DATABASE_CONFIG = {
     'dbname': 'postgres',
     'user': 'postgres',

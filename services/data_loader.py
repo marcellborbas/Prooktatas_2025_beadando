@@ -6,10 +6,12 @@ class DataLoader:
     def __init__(self, db_service):
         self.db_service = db_service
 
+    # Összes szükséges tábla létrehozása
     def create_tables(self):
         for model in [Department, Job, Location, Salary, Employee]:
             model.create_table(self.db_service)
 
+    # csv betöltése és feldolgozása
     def load_data_from_csv(self, file_path):
         with open(file_path, mode='r', encoding='utf-8') as file:
             csv_reader = csv.DictReader(file)

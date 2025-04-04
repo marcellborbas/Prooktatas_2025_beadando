@@ -5,6 +5,7 @@ class Department(BaseModel):
     ID_COLUMN = "department_id"
     LOOKUP_COLUMN = "department_name"
 
+    # Tábla létrehozása ha az még nem létezik
     CREATE_TABLE_QUERY = f"""
         CREATE TABLE IF NOT EXISTS {TABLE_NAME} (
             {ID_COLUMN} SERIAL PRIMARY KEY,
@@ -12,7 +13,7 @@ class Department(BaseModel):
         );
     """
 
-    # 📥 SQL lekérdezés az új osztályok beszúrására
+    # Az új osztályok beszúrása
     INSERT_QUERY = f"""
         INSERT INTO {TABLE_NAME} ({LOOKUP_COLUMN})
         VALUES (%s)

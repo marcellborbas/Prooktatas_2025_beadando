@@ -5,6 +5,7 @@ class Salary(BaseModel):
     ID_COLUMN = "salary_id"
     LOOKUP_COLUMN = "monthly_salary"
 
+    # Tábla létrehozása ha az még nem létezik
     CREATE_TABLE_QUERY = f"""
         CREATE TABLE IF NOT EXISTS {TABLE_NAME} (
             {ID_COLUMN} SERIAL PRIMARY KEY,
@@ -13,6 +14,7 @@ class Salary(BaseModel):
         );
     """
 
+    # Az új fizetések beszúrása
     INSERT_QUERY = f"""
         INSERT INTO {TABLE_NAME} ({LOOKUP_COLUMN})
         VALUES (%s)

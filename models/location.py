@@ -4,6 +4,8 @@ class Location(BaseModel):
     TABLE_NAME = "hr.locations"
     ID_COLUMN = "location_id"
     LOOKUP_COLUMN = "city"
+
+    # Tábla létrehozása ha az még nem létezik
     CREATE_TABLE_QUERY = f"""
         CREATE TABLE IF NOT EXISTS {TABLE_NAME} (
             {ID_COLUMN} SERIAL PRIMARY KEY,
@@ -11,6 +13,7 @@ class Location(BaseModel):
         );
     """
 
+    # Az új helyszínek beszúrása
     INSERT_QUERY = f"""
         INSERT INTO {TABLE_NAME} ({LOOKUP_COLUMN})
         VALUES (%s)
