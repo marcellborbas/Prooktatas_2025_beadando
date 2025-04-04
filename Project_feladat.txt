@@ -1,0 +1,46 @@
+🧾 Beadandó Feladat – HR Nyilvántartó Rendszer Adatmodellezése és Feldolgozása
+🗓️ Határidő: 2 hét
+🧑🎓 Célcsoport: Python + SQL + OLTP adatmodellezés kurzus hallgatói
+________________________________________
+📌 Feladat rövid leírása
+Egy cég belső HR nyilvántartó adatállományát kaptad kézhez. Az adatok jelenlegi formájukban denormalizáltak, azaz minden információ egyetlen táblázatban található, külön adatmodellezés nélkül. A feladatod az, hogy ebből a táblázatból önállóan tervezz meg egy normalizált relációs adatbázist, majd töltsd be az adatokat a saját modelljeid alapján, végül végezz el néhány egyszerű lekérdezést is.
+________________________________________
+📁 Az elérhető adat
+A kiinduló adat egy CSV fájl (vagy táblázat), amely 100 dolgozó személyi és munkavégzési adatait tartalmazza. Az alábbi mezők szerepelnek benne:
+•	first_name – Dolgozó keresztneve
+•	last_name – Dolgozó vezetékneve
+•	department – Részleg megnevezése
+•	job – Beosztás megnevezése
+•	location – Munkavégzés helye (város)
+•	hire_date – Belépés dátuma
+•	monthly_salary – Aktuális havi bruttó fizetés (Ft)
+•	absence_days – Az adott évben kivett szabadságnapok száma
+________________________________________
+📌 Elvárt lépések
+1.	Adatmodellezés
+o	Elemezd az adatokat és határozd meg, milyen logikai entitásokból áll a rendszer!
+o	Tervezd meg a normalizált relációs adatmodellt (legalább 3NF)!
+o	Készíts belőle SQL CREATE TABLE parancsokat (vagy ER diagramot is mellékelhetsz).
+2.	Adatfeldolgozás Python segítségével
+3.	SQL lekérdezések készítése
+o	Írj legalább 5 darab lekérdezést a saját adatmodellre az alábbi kérdések alapján:
+________________________________________
+🧠 Lekérdezési feladatok (megfogalmazott igény alapján)
+1.	Melyik részlegben dolgozik a legtöbb munkavállaló?
+2.	Kik azok a dolgozók, akik 2023-ban legalább 10 nap szabadságot vettek ki?
+3.	Részlegek szerinti átlagfizetések kiszámítása
+4.	Melyik városban dolgozik a legtöbb különböző munkakörű dolgozó?
+5.	Dolgozók listája, akik 2023-ban csatlakoztak a céghez, beosztásukkal és részlegükkel együtt
+________________________________________
+✅ Beküldendő
+•	SQL fájl a saját adatmodell CREATE TABLE definícióival
+•	Python fájl(ok), amely(ek) elvégzik az adatfeldolgozást és betöltést
+•	SQL lekérdezések (.sql vagy .txt fájlban)
+•	Opcionálisan: ER diagram kép vagy PDF formátumban
+________________________________________
+🏁 Értékelési szempontok
+•	Az adatmodell helyessége (normalizálás, kapcsolatok)
+•	A Python kód működőképessége, adatkezelése
+•	A lekérdezések szintaktikai és logikai helyessége
+•	Kódok és fájlok áttekinthetősége, dokumentáltsága
+
