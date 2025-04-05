@@ -13,7 +13,7 @@ select.sql: Tartalmazza az a feladatban megadott lekérdezéseket. Ezeket a lek�
 Telepítés és futtatás:
 
 Előfeltételek:
-Telepítve kell legyen a Python 3.xxx , PostgreSQL és az adatbázis elérhetősége szükséges.
+Telepítve kell legyen a Python 3.10 + verzió , PostgreSQL és az adatbázis elérhetősége szükséges.
 
 Telepítési lépések:
 Klónozd a repository-t: git clone https://github.com/marcellborbas/Prooktatas_2025_beadando.git
